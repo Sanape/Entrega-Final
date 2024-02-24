@@ -1,0 +1,135 @@
+<div
+  class="flex flex-col justify-center px-10 py-8 relative bg-indigo-300 gap-y-10"
+>
+  <i
+    class="fa-solid fa-left-long text-lg absolute top-2 left-3 cursor-pointer"
+    id="back"
+  ></i>
+  <h1 id="productId" class="text-5xl text-white primary-font pl-5 pt-5">ID
+    product:
+    {{productId}}</h1>
+  <div class="w-full flex flex-col p-10 bg-indigo-50 rounded-md">
+    <div id="categoriesProduct" class="w-full flex justify-end pb-3"></div>
+    <div id="productHero" class="flex gap-x-10 w-full pb-10"></div>
+    <hr style="height:1px;border-width:0;color:black;background-color:black" />
+    <div id="productDescription" class="flex gap-x-10 w-full py-10"></div>
+    <hr style="height:1px;border-width:0;color:black;background-color:black" />
+    <div id="productVideo" class="flex gap-x-10 w-full py-10"></div>
+    <hr style="height:1px;border-width:0;color:black;background-color:black" />
+    <div
+      id="productConfiguration"
+      class="w-full flex flex-col justify-center items-center pt-5 gap-y-10"
+    >
+      <h3 class="self-start text-xl primary-font">Update product</h3>
+      <span class="flex gap-x-5 justify-center items-center">
+        <img
+          class="border-2 rounded-md border-orange-600 border-solid"
+          style="max-width:150px;max-height:200px;min-width:150px;min-height:200px;"
+          id="productImg"
+        />
+        <input
+          type="file"
+          class="input_form"
+          style="width: 300px !important;"
+          id="updateProductPhoto"
+        />
+      </span>
+      <form
+        id="updateProductForm"
+        class="flex flex-wrap gap-x-5 justify-center items-center gap-y-5 pt-5"
+      >
+
+        <input
+          type="text"
+          id="updateProductTitle"
+          placeholder="Title"
+          class="input_form"
+          style="width: 300px !important;"
+        />     
+        <input
+          type="number"
+          id="updateProductPrice"
+          placeholder="Price"
+          class="input_form"
+          style="width: 300px !important;"
+          step="0.01"
+          min="0"
+        />
+        <input
+          type="number"
+          id="updateProductDiscount"
+          placeholder="Discount"
+          class="input_form"
+          style="width: 300px !important;"
+          min="0"
+        />
+        <input
+          type="date"
+          id="updateProductReleaseDate"
+          placeholder="Realese Date"
+          class="input_form"
+          style="width: 300px !important;"
+        />
+        <input
+          type="text"
+          id="updateProductVideo"
+          placeholder="Trailer video URL"
+          class="input_form"
+          style="width: 300px !important;"
+        />
+        <input
+          type="number"
+          id="updateProductIdDeveloper"
+          placeholder="ID Developer"
+          class="input_form"
+          style="width: 300px !important;"
+          min="0"
+        />
+        <input
+          type="text"
+          id="updateProductCPU"
+          placeholder="CPU"
+          class="input_form"
+          style="width: 300px !important;"
+        />
+        <input
+          type="number"
+          id="updateProductRAM"
+          placeholder="RAM"
+          class="input_form"
+          style="width: 300px !important;"
+          min="0"
+          step="0.01"
+        />
+        <input
+          type="number"
+          id="updateProductMemory"
+          placeholder="Memory"
+          class="input_form"
+          style="width: 300px !important;"
+          min="0"
+          step="0.01"
+        />
+        <input
+          type="text"
+          id="updateProductGPU"
+          placeholder="GPU"
+          class="input_form"
+          style="width: 300px !important;"
+        />
+        <textarea id="updateProductDescription" cols="30" rows="5" 
+        placeholder="Description"
+        class="input_form"
+        style="width: 530px !important;resize:none;"
+        ></textarea>
+        <input
+          type="submit"
+          value="Submit"
+          class="px-3 py-2 bg-orange-600 secondary-font text-white rounded-md text-sm cursor-pointer"
+        />
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="/js/product.js"></script>

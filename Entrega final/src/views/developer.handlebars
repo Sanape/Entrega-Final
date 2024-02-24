@@ -1,0 +1,54 @@
+<div
+  class="flex flex-col justify-center px-10 py-8 relative bg-indigo-300 gap-y-10"
+>
+  <i
+    class="fa-solid fa-left-long text-lg absolute top-2 left-3 cursor-pointer"
+    id="back"
+  ></i>
+  <h1 id="developerId" class="text-5xl text-white primary-font pl-5 pt-5">ID developer: {{developerId}}</h1>
+  <div class="w-full flex flex-col p-10 bg-indigo-50 rounded-md gap-y-10">
+    <div id="developerHero" class="flex flex-col gap-y-10"></div>
+    
+    <div id="developerProducts" class="w-full flex flex-wrap justify-between"></div>
+    <hr style="height:1px;border-width:0;color:black;background-color:black" />
+    <div
+      id="developerConfiguration"
+      class="w-full flex flex-col justify-center items-center"
+    >
+      <h3 class="self-start text-xl primary-font">Update product</h3>
+      <span class="flex gap-x-5 justify-center items-center">
+        <img
+          class="border-2 rounded-md border-orange-600 border-solid"
+          style="max-width:400px;max-height:200px;min-width:400px;min-height:200px;"
+          id="developerImg"
+        />
+        <input
+          type="file"
+          class="input_form"
+          style="width: 300px !important;"
+          id="updateDeveloperPhoto"
+        />
+      </span>
+      <form
+        id="updateDeveloperForm"
+        class="flex flex-wrap gap-x-5 justify-center items-center gap-y-5"
+      >
+
+        <input
+          type="text"
+          id="updateDeveloperName"
+          placeholder="Developer Name"
+          class="input_form"
+          style="width: 300px !important;"
+        />
+        <input
+          type="submit"
+          value="Submit"
+          class="px-3 py-2 bg-orange-600 secondary-font text-white rounded-md text-sm cursor-pointer"
+        />
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="/js/developer.js"></script>

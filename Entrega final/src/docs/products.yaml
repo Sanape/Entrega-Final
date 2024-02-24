@@ -1,0 +1,193 @@
+paths:
+  /api/products/:
+    get:
+      summary: Gets a list of products
+      parameters:
+        - in: query
+          name: page
+          required: false
+          description: The page to retrieve
+          schema:
+            type: number
+        - in: query
+          name: limit
+          required: false
+          description: The amount of products to retrieve
+          schema:
+            type: number
+        - in: query
+          name: sort
+          required: false
+          description: The attribute to sort by the products
+          schema:
+            type: string
+        - in: query
+          name: order
+          required: false
+          description: The order of the products. 'asc' order upwards. 'desc' order downwards
+          schema:
+            type: string
+        - in: query
+          name: filter
+          required: false
+          description: The filter to use for the products. It can be 'keyword', 'category', 'brand', 'price', 'discount', 'popularity', 'recent'
+          schema:
+            type: string
+        - in: query
+          name: filterValue
+          required: false
+          description: The filter value to use for the products. It can be string for 'keyword', number for 'category', number for 'brand', object {majorPrice (number), minorPrice (number)} for 'price', object {majorDiscount (number), minorDiscount (number)} for 'discount', number for 'popularity', object {endDate (date), startDate (date)} for 'recent'
+          schema:
+            type: string
+      tags:
+        - Products
+      responses:
+        '200':
+          description: Products found
+        '500':
+          description: Server error
+        '400':
+          description: Something wrong were sent in the request
+    post:
+      summary: Create a product
+      tags:
+        - Products
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#components/requestBodies/createProduct'
+      responses:
+        '200':
+          description: Product created
+        '500':
+          description: Server error
+        '400':
+          description: Something wrong were sent in the request
+  /api/products/{id}/:
+    get:
+      summary: Gets a specific product
+      parameters:
+        - in: path
+          name: id
+          description: Product identifier
+          schema:
+            type: number
+      tags:
+        - Products
+      responses:
+        '200':
+          description: Product found
+        '500':
+          description: Server error
+        '400':
+          description: Something wrong were sent in the request
+    put:
+      summary: Update a product
+      parameters:
+        - in: path
+          name: id
+          description: Product identifier
+          schema:
+            type: number
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#components/requestBodies/updateProduct'
+      tags:
+        - Products
+      responses:
+        '200':
+          description: Product updated
+        '500':
+          description: Server error
+        '400':
+          description: Something wrong were sent in the request
+    delete:
+      summary: Delete a product
+      parameters:
+        - in: path
+          name: id
+          description: Product identifier
+          schema:
+            type: number
+      tags:
+        - Products
+      responses:
+        '200':
+          description: Product deleted
+        '500':
+          description: Server error
+        '400':
+          description: Something wrong were sent in the request
+
+components:
+  schemas:
+    Product:
+      type: object
+      properties:
+        id:
+          type: number
+        title:
+          type: string
+        description:
+          type: string
+        price:
+          type: number
+        discount:
+          type: number
+        release_date:
+          type: string
+          format: date
+        url_front_page:
+          type: string
+        front_page_public_id:
+          type: string
+        popularity:
+          type: number
+        developer_id:
+          type: number
+      example:
+        id: 2
+        title:
+        description: Hell’s armies have invaded Earth. Become the Slayer in an epic single-player campaign to conquer demons across dimensions and stop the final destruction of humanity. The only thing they fear... is you.
+        price: 23.99
+        discount: 30
+        release_date: 2020-03-20
+        url_front_page: https://some/url/to/image/image.jpg
+        front_page_public_id: uuyxe3vwcpvylckqen
+        popularity: 12
+        developerId: 1
+  requestBodies:
+    createProduct:
+      type: object
+      properties:
+        title:
+          type: string
+        description:
+          type: string
+        price:
+          type: number
+        release_date:
+          type: string
+          format: date
+        developerId:
+          type: number
+    updateProduct:
+      type: object
+      properties:
+        title:
+          type: string
+        description:
+          type: string
+        price:
+          type: number
+        release_date:
+          type: string
+          format: date
+        developerId:
+          type: number
+        image:
+          type: string
+          format: binary

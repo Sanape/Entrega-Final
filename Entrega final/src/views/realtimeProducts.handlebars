@@ -1,0 +1,138 @@
+<div class="flex px-5 py-10 relative bg-indigo-300">
+  <i
+    class="fa-solid fa-left-long text-lg absolute top-2 left-3 cursor-pointer"
+    id="back"
+  ></i>
+
+  <div class="w-full flex gap-x-5">
+    <div class="w-full flex flex-col">
+      <div
+        class="w-full bg-indigo-50 border border-solid border-indigo-500 p-3"
+      >For more configurations click someone &#x1F447;</div>
+      <div id="listProducts" class="w-full"></div>
+
+    </div>
+    
+      
+    <div
+      class="w-full h-fit bg-indigo-50 border border-solid border-indigo-500 flex flex-col p-6"
+    >
+      <h2 class="self-start text-3xl mb-3 primary-font">Products</h2>
+      <div class="flex gap-x-5">
+        <form id="createProductForm" class="flex flex-col gap-y-3">
+          <h3 class="self-start text-sm secondary-font">Create product</h3>
+          <input
+            type="text"
+            id="createProductTitle"
+            placeholder="Title"
+            class="input_form"
+            style="width: 300px !important;"
+          />
+          <input
+            type="text"
+            id="createProductDescription"
+            placeholder="Description"
+            class="input_form"
+            style="width: 300px !important;"
+          />
+          <input
+            type="number"
+            id="createProductPrice"
+            placeholder="Price"
+            class="input_form"
+            style="width: 300px !important;"
+            step="0.01"
+            min="0"
+          />
+          <input
+            type="number"
+            id="createProductDiscount"
+            placeholder="Discount"
+            class="input_form"
+            style="width: 300px !important;"
+            min="0"
+          />
+          <input
+            type="date"
+            id="createProductReleaseDate"
+            placeholder="Realese Date"
+            class="input_form"
+            style="width: 300px !important;"
+          />
+          <input
+            type="text"
+            id="createProductVideo"
+            placeholder="Trailer video URL"
+            class="input_form"
+            style="width: 300px !important;"
+          />
+          <input
+            type="number"
+            id="createProductIdDeveloper"
+            placeholder="ID Developer"
+            class="input_form"
+            style="width: 300px !important;"
+            min="0"
+          />
+          <input
+            type="text"
+            id="createProductCPU"
+            placeholder="CPU"
+            class="input_form"
+            style="width: 300px !important;"
+          />
+          <input
+            type="number"
+            id="createProductRAM"
+            placeholder="RAM"
+            class="input_form"
+            style="width: 300px !important;"
+            min="0"
+            step="0.01"
+          />
+          <input
+            type="number"
+            id="createProductMemory"
+            placeholder="Memory"
+            class="input_form"
+            style="width: 300px !important;"
+            min="0"
+            step="0.01"
+          />
+          <input
+            type="text"
+            id="createProductGPU"
+            placeholder="GPU"
+            class="input_form"
+            style="width: 300px !important;"
+          />
+          <input
+            type="submit"
+            value="Submit"
+            class="px-3 py-2 bg-orange-600 secondary-font text-white rounded-md text-sm cursor-pointer"
+          />
+          <p id="createProductFormMessageSection" class="text-green-500"></p>
+        </form>
+        <form id="deleteProductForm" class="flex flex-col gap-y-3">
+          <h3 class="self-start text-sm secondary-font">Delete product</h3>
+          <input
+            type="number"
+            id="deleteProductId"
+            placeholder="ID product"
+            class="input_form"
+            style="width: 300px !important;"
+          />
+          <input
+            type="submit"
+            value="Submit"
+            class="px-3 py-2 bg-orange-600 secondary-font text-white rounded-md text-sm cursor-pointer"
+          />
+          <p id="deleteProductFormMessageSection" class="text-green-500"></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/realtimeProducts.js"></script>

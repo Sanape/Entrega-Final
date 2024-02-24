@@ -1,0 +1,32 @@
+<div
+  class="flex flex-col justify-center px-5 py-10 relative bg-indigo-300 gap-y-10"
+>
+  <i
+    class="fa-solid fa-left-long text-lg absolute top-2 left-3 cursor-pointer"
+    id="back"
+  ></i>
+  <h1 class="text-5xl text-white primary-font pl-5 pt-5">Shopping history</h1>
+  <span class="flex items-center gap-x-3">
+    <p class="text-sm secondary-font text-white">Start date:</p>
+    <input
+      type="date"
+      id="startDate"
+      class="input_form"
+      style="width: 160px !important;"
+    />
+    <p class="text-sm secondary-font text-white">End date:</p>
+    <input
+      type="date"
+      id="endDate"
+      class="input_form"
+      style="width: 160px !important;"
+    />
+    <button
+      class="px-3 py-2 bg-orange-600 secondary-font text-white rounded-md text-sm cursor-pointer"
+      onclick="location.href = 'https://curso-coder-backend-production.up.railway.app/history'"
+    >Reset</button>
+  </span>
+  <div id="listCarts" class="flex flex-col gap-y-1"></div>
+</div>
+
+<script src="/js/history.js"></script>

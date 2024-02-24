@@ -1,0 +1,58 @@
+<div
+  class="flex flex-col justify-center px-10 py-8 relative bg-indigo-300 gap-y-10"
+>
+  <i
+    class="fa-solid fa-left-long text-lg absolute top-2 left-3 cursor-pointer"
+    id="back"
+  ></i>
+  <h1 class="text-5xl text-white primary-font pl-5 pt-5">Opinions</h1>
+  <div class="w-full flex flex-col p-10 rounded-md gap-y-5 items-center">
+    <div
+      class="bg-indigo-50 rounded-md border-2 border-orange-600 w-fit h-fit"
+      id="userOpinion"
+    >
+      <form id="opinionForm" class="flex flex-col p-5 justify-center gap-y-5">
+        <p class="primary-font text-xl">Your opinion</p>
+        <span class="flex justify-between w-full px-3">
+          <span
+            class="fa-solid fa-star text-xl cursor-pointer text-yellow-100"
+            id="star1"
+          ></span>
+          <span
+            class="fa-solid fa-star text-xl cursor-pointer text-yellow-100"
+            id="star2"
+          ></span>
+          <span
+            class="fa-solid fa-star text-xl cursor-pointer text-yellow-100"
+            id="star3"
+          ></span>
+          <span
+            class="fa-solid fa-star text-xl cursor-pointer text-yellow-100"
+            id="star4"
+          ></span>
+          <span
+            class="fa-solid fa-star text-xl cursor-pointer text-yellow-100"
+            id="star5"
+          ></span>
+        </span>
+        <textarea
+          id="comment"
+          cols="30"
+          rows="3"
+          placeholder="Leave your comment"
+          class="input_form"
+          style="width: 300px !important;resize:none;"
+        ></textarea>
+        <input
+          type="submit"
+          value="Submit"
+          class="px-3 py-2 bg-orange-600 secondary-font text-white rounded-md text-sm cursor-pointer w-fit"
+        />
+      </form>
+      
+    </div>
+    <div class="w-full flex flex-wrap  flex-auto gap-5" id="usersOpinions"></div>
+  </div>
+</div>
+
+<script src="/js/opinions.js"></script>

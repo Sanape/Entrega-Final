@@ -1,0 +1,30 @@
+<div
+  class="flex flex-col justify-center p-10 bg-indigo-300 gap-y-10"
+>
+  <h2 class="primary-font text-5xl">Live Chat</h2>
+  <div
+    class="flex flex-col gap-y-10 bg-indigo-50 pt-6 px-6 pb-2 w-full rounded-md"
+  >
+
+    <div
+      id="chat"
+      style="min-height: 300px;max-height: 300px;"
+      class="flex flex-col overflow-y-scroll p-3"
+    ></div>
+    <form id="messageForm" class="w-full flex gap-x-3">
+      <input
+        type="text"
+        name="message"
+        id="message"
+        class="w-full rounded-full px-5 py-2 secondary-font"
+      />
+      <button type="submit"><i
+          class="fa-solid fa-paper-plane bg-orange-600 secondary-font text-white rounded-full p-2"
+        ></i></button>
+    </form>
+  </div>
+
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/chat.js"></script>

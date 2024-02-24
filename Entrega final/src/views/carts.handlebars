@@ -1,0 +1,37 @@
+<div
+  class="flex flex-col justify-center px-10 py-8 relative bg-indigo-300 gap-y-10"
+>
+  <i
+    class="fa-solid fa-left-long text-lg absolute top-2 left-3 cursor-pointer"
+    id="back"
+  ></i>
+  <span class="flex items-center">
+    <h1 id="cartId" class="text-5xl text-white primary-font pl-5 pt-5">ID cart:
+      {{cartId}}</h1>
+    <a href="https://curso-coder-backend-production.up.railway.app/history" class="pl-5 pt-5"><i
+        class="fa-solid fa-clock-rotate-left text-white text-xl"
+        title="History of buys"
+      ></i></a>
+  </span>
+  <div class="flex gap-x-10">
+    <div id="productOfCart" class="w-3/4 flex flex-col gap-y-1">
+    </div>
+    <div
+      class="flex flex-col w-1/4 rounded-md border-2 bg-indigo-50 border-solid border-indigo-500 p-3 h-fit"
+    >
+      <p id="totalAmount" class="text-sm secondary-font px-3 py-10">Total
+        amount:
+      </p>
+      <button
+        id="buyButton"
+        class="w-full px-3 py-2 bg-orange-600 secondary-font text-white rounded-md text-sm cursor-pointer"
+        onclick="buyCart()"
+      >
+        Buy
+      </button>
+    </div>
+  </div>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/cart.js"></script>

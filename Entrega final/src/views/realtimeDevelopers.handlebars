@@ -1,0 +1,59 @@
+<div class="flex px-5 py-10 relative bg-indigo-300">
+  <i
+    class="fa-solid fa-left-long text-lg absolute top-2 left-3 cursor-pointer"
+    id="back"
+  ></i>
+
+  <div class="w-full flex gap-x-5">
+    <div class="w-full flex flex-col">
+      <div
+        class="w-full bg-indigo-50 border border-solid border-indigo-500 p-3"
+      >For more configurations click someone &#x1F447;</div>
+      <div id="listDevelopers" class="w-full"></div>
+
+    </div>
+
+    <div
+      class="w-full h-fit bg-indigo-50 border border-solid border-indigo-500 flex flex-col p-6"
+    >
+      <h2 class="self-start text-3xl mb-3 primary-font">Developers</h2>
+      <div class="flex gap-x-5">
+        <form id="createDeveloperForm" class="flex flex-col gap-y-3">
+          <h3 class="self-start text-sm secondary-font">Create developer</h3>
+          <input
+            type="text"
+            id="createDeveloperName"
+            placeholder="Title"
+            class="input_form"
+            style="width: 300px !important;"
+          />
+          <input
+            type="submit"
+            value="Submit"
+            class="px-3 py-2 bg-orange-600 secondary-font text-white rounded-md text-sm cursor-pointer"
+          />
+          <p id="createDeveloperFormMessageSection" class="text-green-500"></p>
+        </form>
+        <form id="deleteDeveloperForm" class="flex flex-col gap-y-3">
+          <h3 class="self-start text-sm secondary-font">Delete developer</h3>
+          <input
+            type="number"
+            id="deleteDeveloperId"
+            placeholder="ID developer"
+            class="input_form"
+            style="width: 300px !important;"
+          />
+          <input
+            type="submit"
+            value="Submit"
+            class="px-3 py-2 bg-orange-600 secondary-font text-white rounded-md text-sm cursor-pointer"
+          />
+          <p id="deleteDeveloperFormMessageSection" class="text-green-500"></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/realtimeDevelopers.js"></script>

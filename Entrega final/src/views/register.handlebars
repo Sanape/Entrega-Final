@@ -1,0 +1,57 @@
+<div
+  class="bg-indigo-50 flex flex-col justify-center items-center h-screen gap-y-10 relative"
+>
+  <i
+    class="fa-solid fa-left-long text-2xl absolute top-2 left-3 cursor-pointer"
+    id="back"
+  ></i>
+  <h2 class="primary-font text-5xl">Register</h2>
+  <form
+    id="registerForm"
+    class="flex flex-col justify-center items-center gap-y-5"
+  >
+    <input
+      type="text"
+      name="first_name"
+      id="first_name"
+      placeholder="First name"
+      class="input_form"
+    />
+    <input
+      type="text"
+      name="last_name"
+      id="last_name"
+      placeholder="Last name"
+      class="input_form"
+    />
+    <input
+      type="email"
+      name="email"
+      id="email"
+      placeholder="Email"
+      class="input_form"
+    />
+    <input
+      type="password"
+      name="password"
+      id="password"
+      placeholder="Password"
+      class="input_form"
+    />
+    <input
+      type="password"
+      name="confirm_password"
+      id="confirm_password"
+      placeholder="Confirm password"
+      class="input_form"
+    />
+    <a class="text-orange-600 w-full" href="https://curso-coder-backend-production.up.railway.app/login">Have account?</a>
+    <input
+      type="submit"
+      value="Register"
+      class="p-2 bg-orange-600 secondary-font text-white rounded-md text-sm cursor-pointer"
+    />
+  </form>
+</div>
+
+<script src="/js/register.js"></script>

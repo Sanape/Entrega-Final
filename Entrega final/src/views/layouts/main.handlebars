@@ -1,0 +1,113 @@
+<html lang='en'>
+
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <title>GameStore</title>
+    <link rel='stylesheet' href='/styles/styles.css' />
+    <link
+      rel='stylesheet'
+      href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'
+      integrity='sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=='
+      crossorigin='anonymous'
+      referrerpolicy='no-referrer'
+    />
+    <script src='https://cdn.tailwindcss.com'></script>
+    <script
+      src='https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js'
+    ></script>
+    <script src='https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js'></script>
+  </head>
+
+  <body>
+    <div
+      class='w-full bg-green-500 flex justify-between py-3 px-4 items-center'
+    >
+      <a
+        class='text-white primary-font text-xl'
+        href='http://localhost:8080/'
+      >GameStore</a>
+      <div class='flex gap-x-5 items-center'>
+        <div
+          class='flex bg-white px-3 py-0.5 search justify-between items-center rounded-2xl'
+        >
+          <input
+            type='text'
+            class='w-full border-0 outline-0 p-0.5 secondary-font'
+            placeholder='Search products...'
+            id='searchBar'
+          />
+          <i class='fa-solid fa-magnifying-glass'></i>
+        </div>
+        <a id='cart' class='text-white' href='http://localhost:8080/login'><i
+            class='fa-solid fa-cart-shopping'
+          ></i></a>
+        <span class='flex gap-x-1' class='text-white' id='login-section'>
+
+        </span>
+      </div>
+    </div>
+    <div class='w-full bg-green-300 flex items-center' id='sections'>
+      <a
+        href='http://localhost:8080/products'
+        class='secondary-font text-indigo-600 hover:bg-green-500 px-4 py-2 hover:text-white'
+      >Catalogue</a>
+      {{! TODO:add manufacturer and customers pages }}
+      <a
+        href='http://localhost:8080/'
+        class='secondary-font text-indigo-600 hover:bg-green-500 px-4 py-2 hover:text-white'
+      >Brands</a>
+      <a
+        href='http://localhost:8080/'
+        class='secondary-font text-indigo-600 hover:bg-green-500 px-4 py-2 hover:text-white'
+      >Opinions</a>
+      <a
+        href='http://localhost:8080/chat'
+        class='secondary-font text-indigo-600 hover:bg-green-500 px-4 py-2 hover:text-white'
+      >Live chat</a>
+    </div>
+
+    {{! <div id='snackbar'>Best products for your digital experience</div> }}
+    {{{body}}}
+    <footer
+      class='w-full flex flex-col justify-center items-center bg-green-500 p-10 gap-y-10'
+    >
+      <div>
+        <a
+          title='home'
+          href='http://localhost:8080'
+          class='text-white text-3xl primary-font font-bold'
+        >
+          <h3>
+            GS
+          </h3>
+        </a>
+      </div>
+      <div class='flex gap-x-10'>
+        {{! <h2>
+          <a
+            href='https://www.linkedin.com/in/'
+            class='text-2xl text-white'
+          ><i
+              class='fa-brands fa-linkedin-in social-icon'
+              id='linkedin-icon'
+            ></i></a>
+        </h2> }}
+        <h2>
+          <a href='https://github.com/sanape' class='text-2xl text-white'><i
+              class='fa-brands fa-github social-icon'
+              id='github-icon'
+            ></i></a>
+        </h2>
+      </div>
+      <div>
+        <p class='text-white secondary-font text-sm'>
+          Copyright &copy;<span id='actualYear'></span>.
+        </p>
+      </div>
+    </footer>
+  </body>
+  <script src='/socket.io/socket.io.js'></script>
+  <script src='/js/main.js'></script>
+
+</html>

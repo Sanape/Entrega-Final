@@ -1,0 +1,65 @@
+<div
+  class="bg-indigo-50 flex flex-col min-h-screen gap-y-5 relative justify-center items-center py-10"
+>
+  <i
+    class="fa-solid fa-left-long text-2xl absolute top-2 left-3 cursor-pointer"
+    id="back"
+  ></i>
+  <h2 class="primary-font text-5xl">Profile</h2>
+  <p id="role"></p>
+  <form id="roleForm" class="flex flex-col justify-center gap-y-10"></form>
+  <form id="updateProfileForm" class="flex flex-col justify-center gap-y-10">
+    <span class="flex justify-center items-center gap-x-5">
+      <img
+        class="border-2 rounded-full border-orange-600 border-solid"
+        style="max-width:80px;max-height:80px;min-width:80px;min-height:80px;"
+        id="profilePhoto"
+      />
+      <input type="file" name="inputProfilePhoto" id="inputProfilePhoto" />
+    </span>
+    <span class="flex flex-col  justify-center items-center gap-y-5">
+      <input
+      type="text"
+      name="first_name"
+      id="first_name"
+      placeholder="First name"
+      class="input_form"
+    />
+    <input
+      type="text"
+      name="last_name"
+      id="last_name"
+      placeholder="Last name"
+      class="input_form"
+    />
+    
+    </span>
+    <span class="flex justify-center items-center gap-x-5">
+      <input
+      type="submit"
+      value="Update profile"
+      class="p-2 bg-orange-600 secondary-font text-white rounded-md text-sm cursor-pointer"
+    />
+    <button
+      class="p-2 bg-red-600 secondary-font text-white rounded-md text-sm"
+      id="deleteAccountDialogButton"
+    >Delete account</button>
+    </span>
+    <dialog class="bg-indigo-500 p-5 rounded-md" id="profileDialog">
+      <p class="text-white text-lg mb-5">Are you sure you want to delete your account? All information related
+        will be lost</p>
+      <span class="flex items-center justify-end gap-x-5">
+        <button
+          class="p-2 bg-orange-600 secondary-font text-white rounded-md text-sm"
+          id="cancelDeleteButton"
+        >Cancel</button>
+        <button
+          class="p-2 bg-red-600 secondary-font text-white rounded-md text-sm"
+          id="deleteButton"
+        >Delete</button>
+      </span>
+    </dialog>
+  </form>
+</div>
+
+<script src="/js/profile.js"></script>

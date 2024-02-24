@@ -1,0 +1,73 @@
+<div class="flex flex-col justify-center px-5 py-10 relative bg-indigo-300">
+  <i
+    class="fa-solid fa-left-long text-lg absolute top-2 left-3 cursor-pointer"
+    id="back"
+  ></i>
+  <div class="w-full flex gap-x-5">
+    <div id="listCategories" class="h-fit flex flex-wrap gap-1"></div>
+    <div
+      class="h-fit bg-indigo-50 border border-solid border-indigo-500 flex flex-col gap-y-5 p-6"
+    >
+      <h2 class="self-start text-3xl mb-3 primary-font">Categories</h2>
+      <form id="createCategoryForm" class="flex flex-col gap-y-3">
+        <h3 class="self-start text-sm secondary-font">Create category</h3>
+        <input
+          type="text"
+          id="createCategoryName"
+          placeholder="Category name"
+          class="input_form"
+          style="width: 300px !important;"
+        />
+        <input
+          type="submit"
+          value="Submit"
+          class="px-3 py-2 bg-orange-600 secondary-font text-white rounded-md text-sm cursor-pointer"
+        />
+        <p id="createCategoryFormMessageSection" class="text-green-500"></p>
+      </form>
+      <form id="updateCategoryForm" class="flex flex-col gap-y-3">
+        <h3 class="self-start text-sm secondary-font">Update category</h3>
+        <input
+          type="number"
+          id="updateCategoryId"
+          placeholder="ID category"
+          class="input_form"
+          style="width: 300px !important;"
+        />
+        <input
+          type="text"
+          id="updateCategoryName"
+          placeholder="Category name"
+          class="input_form"
+          style="width: 300px !important;"
+        />
+        <input
+          type="submit"
+          value="Submit"
+          class="px-3 py-2 bg-orange-600 secondary-font text-white rounded-md text-sm cursor-pointer"
+        />
+        <p id="updateCategoryFormMessageSection" class="text-green-500"></p>
+      </form>
+      <form id="deleteCategoryForm" class="flex flex-col gap-y-3">
+        <h3 class="self-start text-sm secondary-font">Delete category</h3>
+        <input
+          type="number"
+          id="deleteCategoryId"
+          placeholder="ID category"
+          class="input_form"
+          style="width: 300px !important;"
+        />
+        <input
+          type="submit"
+          value="Submit"
+          class="px-3 py-2 bg-orange-600 secondary-font text-white rounded-md text-sm cursor-pointer"
+        />
+        <p id="deleteCategoryFormMessageSection" class="text-green-500"></p>
+      </form>
+
+    </div>
+  </div>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/realtimeCategories.js"></script>

@@ -1,0 +1,150 @@
+paths:
+  /api/carts/:
+    get:
+      summary: Gets not bought cart of active user
+      tags:
+        - Carts
+      responses:
+        "200":
+          description: Cart found
+        "500":
+          description: Server error
+    post:
+      summary: Add product to cart
+      tags:
+        - Carts
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#components/requestBodies/addProduct"
+      responses:
+        "200":
+          description: Product added to cart
+        "500":
+          description: Server error
+        "400":
+          description: Something wrong were sent in the request
+  /api/carts/history/:
+    get:
+      summary: Gets history of carts
+      tags:
+        - Carts
+      responses:
+        "200":
+          description: History found
+        "500":
+          description: Server error
+  /api/carts/{id}/:
+    get:
+      summary: Gets a specific cart
+      parameters:
+        - in: path
+          name: id
+          description: Cart identifier
+          schema:
+            type: number
+      tags:
+        - Carts
+      responses:
+        "200":
+          description: Cart found
+        "500":
+          description: Server error
+  /api/carts/{id}/buy:
+    put:
+      summary: Buys a specific cart
+      parameters:
+        - in: path
+          name: id
+          description: Cart identifier
+          schema:
+            type: number
+      tags:
+        - Carts
+      responses:
+        "200":
+          description: Cart bought
+        "500":
+          description: Server error
+        "400":
+          description: Something wrong were sent in the request
+  /api/carts/{cartId}/product/{productId}:
+    delete:
+      summary: Delete a product from the cart
+      parameters:
+        - in: path
+          name: cartId
+          description: Cart identifier
+          schema:
+            type: number
+        - in: path
+          name: productId
+          description: Product identifier
+          schema:
+            type: number
+      tags:
+        - Carts
+      responses:
+        "200":
+          description: Product removed from cart
+        "500":
+          description: Server error
+        "400":
+          description: Something wrong were sent in the request
+    get:
+      summary: Checks if a product is already added to a cart
+      parameters:
+        - in: path
+          name: cartId
+          description: Cart identifier
+          schema:
+            type: number
+        - in: path
+          name: productId
+          description: Product identifier
+          schema:
+            type: number
+      tags:
+        - Carts
+      responses:
+        "200":
+          description: Product added or not to the cart
+        "500":
+          description: Server error
+        "400":
+          description: Something wrong were sent in the request
+
+
+components:
+  schemas:
+    Cart:
+      type: object
+      properties:
+        id:
+          type: number
+        bought:
+          type: boolean
+        amount:
+          type: number
+        code:
+          type: string
+        purchaser:
+          type: string
+        user_id:
+          type: number
+      example:
+        id: 46
+        bought: true
+        amount: 34.99
+        code: 6fd0bb0b-ae5e-4777-ad52-9aef48cd211f
+        purchaser: example@example.com
+        user_id: 1
+  requestBodies:
+    addProduct:
+      type: object
+      properties:
+        productId:
+          type: number
+        cartId:
+          type: number

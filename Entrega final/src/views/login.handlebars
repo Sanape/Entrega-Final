@@ -1,0 +1,61 @@
+<div
+  class="bg-indigo-50 flex flex-col justify-center items-center h-screen gap-y-10 relative"
+>
+  <i
+    class="fa-solid fa-left-long text-2xl absolute top-2 left-3 cursor-pointer"
+    id="back"
+  ></i>
+  <h2 class="primary-font text-5xl">Login</h2>
+  <form
+    id="loginForm"
+    class="flex flex-col justify-center items-center gap-y-5"
+  >
+    <input
+      type="email"
+      name="email"
+      id="email"
+      placeholder="Email"
+      class="input_form"
+    />
+    <input
+      type="password"
+      name="password"
+      id="password"
+      placeholder="Password"
+      class="input_form"
+    />
+    <span class="flex flex-col w-full gap-y-2">
+      <a
+      class="text-orange-600 w-full text-sm"
+      href="https://curso-coder-backend-production.up.railway.app/register"
+    >Doesn't have an account yet?</a>
+    <a
+      class="text-orange-600 w-full text-sm"
+      href="https://curso-coder-backend-production.up.railway.app/forgotPassword"
+    >Forgot password?</a>
+    </span>
+
+    <span class="flex justify-center items-center gap-x-5">
+      <input
+        type="submit"
+        value="Login"
+        class="px-3 py-2 bg-orange-600 secondary-font text-white rounded-md text-sm cursor-pointer"
+      />
+
+      <p class="text-4xl mb-2">|</p>
+
+      <a href="https://curso-coder-backend-production.up.railway.app/api/sessions/google">
+        <button
+          type="button"
+          class="py-2 px-3 bg-blue-500 secondary-font text-white rounded-md text-xl flex items-center justify-center gap-x-2"
+        >
+          <i class="fa-brands fa-google"></i>
+        </button>
+      </a>
+    </span>
+
+  </form>
+
+</div>
+
+<script src="/js/login.js"></script>

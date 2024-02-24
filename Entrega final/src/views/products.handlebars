@@ -1,0 +1,80 @@
+<div class="flex justify-center px-10 py-8 relative bg-indigo-300 gap-x-3">
+  <div class="w-1/5 flex flex-col pr-10 pt-5 rounded-md gap-y-10">
+    <span class="flex flex-col gap-y-3">
+      <p class="text-sm text-bold secondary-font pb-2">*Filters can be apply one at the time</p>
+      <p class="text-sm primary-font">Filter by price</p>
+      <span class="w-full flex justify-between items-center">
+        <input
+          type="number"
+          class="p-2 outline-0 rounded-md secondary-font"
+          id="minPrice"
+          placeholder="Min"
+          style="width: 70px;"
+          min="0"
+        />
+        -
+        <input
+          type="number"
+          class="p-2 outline-0 rounded-md secondary-font"
+          id="maxPrice"
+          placeholder="Max"
+          style="width: 70px;"
+          min="0"
+        />
+      </span>
+    </span>
+    <span class="flex flex-col gap-y-3">
+      <p class="text-sm primary-font">Filter by discount</p>
+      <span class="w-full flex justify-between items-center">
+        <input
+          type="number"
+          class="p-2 outline-0 rounded-md secondary-font"
+          id="minDiscount"
+          placeholder="Min"
+          style="width: 70px;"
+          min="0"
+        />
+        -
+        <input
+          type="number"
+          class="p-2 outline-0 rounded-md secondary-font"
+          id="maxDiscount"
+          placeholder="Max"
+          style="width: 70px;"
+          min="0"
+        />
+      </span>
+    </span>
+    <span class="flex flex-col gap-y-3">
+      <p class="text-sm primary-font">Filter by category</p>
+
+      <select
+        id="categorySelect"
+        class="rounded-md p-1.5 secondary-font outline-0"
+        style="width: 194px;"
+      ></select>
+    </span>
+    <button
+        type="button"
+        class="px-3 py-2 bg-orange-600 secondary-font text-white rounded-md text-sm cursor-pointer w-fit"
+        id="resetFilters"
+      >Reset filters</button>
+  </div>
+  <div class="w-4/5 flex flex-col p-10 bg-indigo-50 rounded-md gap-y-10">
+    <span class="flex w-full items-center justify-between">
+      <p class="text-5xl primary-font">Catalogue</p>
+      <select id="order" class="rounded-md p-1.5 secondary-font outline-0">
+        <option value="">Default order</option>
+        <option value='{"sort":"price","order":"ASC"}'>Minor price</option>
+        <option value='{"sort":"price","order":"DESC"}'>Major price</option>
+        <option value='{"sort":"popularity","order":"ASC"}'>Minor popularity</option>
+        <option value='{"sort":"popularity","order":"DESC"}'>Major popularity</option>
+      </select></span>
+    <div id="foundProducts" class="w-full flex flex-wrap gap-x-2 gap-y-3"></div>
+    <div id="pagination" class="w-full flex justify-between items-center">
+
+    </div>
+  </div>
+</div>
+
+<script src="/js/products.js"></script>
